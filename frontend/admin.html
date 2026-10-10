@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ff8a00" />
+    <title>Painel administrativo | Achados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./marketplace.css" />
+    <script src="./admin.js" defer></script>
+  </head>
+  <body class="admin-page">
+    <header class="admin-header">
+      <a class="brand" href="/" aria-label="Achados, loja">
+        <span class="brand-mark" aria-hidden="true">a.</span>
+        <span class="brand-copy"><strong>achados</strong><small>painel administrativo</small></span>
+      </a>
+      <a class="admin-store-link" href="/">Voltar à loja <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-login-panel" id="login-panel" aria-labelledby="login-title">
+        <p class="admin-eyebrow">ÁREA RESTRITA</p>
+        <h1 id="login-title">Entrar no painel</h1>
+        <p class="admin-intro">Acesse para publicar produtos e acompanhar os cliques.</p>
+        <form id="login-form" class="admin-form admin-login-form">
+          <label>E-mail
+            <input name="Email" type="email" autocomplete="username" required />
+          </label>
+          <label>Senha
+            <input name="Senha" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="admin-primary-button" type="submit">Entrar</button>
+          <p class="admin-message" id="login-message" role="alert"></p>
+        </form>
+      </section>
+
+      <section id="dashboard" class="admin-dashboard" hidden>
+        <div class="admin-heading">
+          <div>
+            <p class="admin-eyebrow">CONTROLE DA LOJA</p>
+            <h1>Produtos e cliques</h1>
+          </div>
+          <div class="admin-heading-actions">
+            <button class="admin-secondary-button" id="refresh-products" type="button">Atualizar</button>
+            <button class="admin-logout-button" id="logout" type="button">Sair</button>
+          </div>
+        </div>
+
+        <div class="admin-metrics" aria-live="polite">
+          <article class="admin-metric"><span>Produtos publicados</span><strong id="product-count">0</strong></article>
+          <article class="admin-metric"><span>Cliques nos links</span><strong id="click-count">0</strong></article>
+        </div>
+
+        <div class="admin-columns">
+          <section class="admin-card" aria-labelledby="new-product-title">
+            <div class="admin-card-heading">
+              <div><p class="admin-eyebrow">CATÁLOGO</p><h2 id="new-product-title">Adicionar produto</h2></div>
+            </div>
+            <form id="product-form" class="admin-form">
+              <label class="field-wide">Nome do produto
+                <input name="Nome" maxlength="160" required />
+              </label>
+              <label class="field-wide">Descrição
+                <textarea name="Descricao" rows="3" maxlength="1000" required></textarea>
+              </label>
+              <label>Preço (R$)
+                <input name="Preco" type="number" min="0.01" step="0.01" required />
+              </label>
+              <label>Categoria
+                <input name="Categoria" maxlength="80" required />
+              </label>
+              <label class="field-wide">URL da imagem
+                <input name="Imagem" type="url" placeholder="https://..." required />
+              </label>
+              <label class="field-wide">Link de afiliado
+                <input name="Link" type="url" placeholder="https://..." required />
+              </label>
+              <button class="admin-primary-button field-wide" type="submit">Publicar produto</button>
+              <button class="admin-secondary-button field-wide" id="cancel-edit" type="button" hidden>Cancelar edição</button>
+              <p class="admin-message field-wide" id="product-message" role="status"></p>
+            </form>
+          </section>
+
+          <section class="admin-card admin-products-card" aria-labelledby="products-title">
+            <div class="admin-card-heading">
+              <div><p class="admin-eyebrow">DESEMPENHO</p><h2 id="products-title">Seus anúncios</h2></div>
+            </div>
+            <div class="admin-product-list" id="product-list" aria-live="polite"></div>
+            <p class="admin-message" id="list-message" role="status"></p>
+          </section>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

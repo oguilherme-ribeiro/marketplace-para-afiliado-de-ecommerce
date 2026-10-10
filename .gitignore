@@ -1,0 +1,7 @@
+.env
+database.json
+database.json.tmp
+backend/.env
+backend/database.json
+backend/database.json.tmp
+backend/node_modules/

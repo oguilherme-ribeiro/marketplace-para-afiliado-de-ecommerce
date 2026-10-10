@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffe600" />
+    <meta name="description" content="Achados da Shopee escolhidos a dedo. Boas compras, sem perder tempo procurando." />
+    <title>Achados | Coisas boas, preço melhor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./marketplace.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <header class="market-header" id="inicio">
+      <div class="market-header-main">
+        <a class="brand" href="#inicio" aria-label="Achados, início">
+          <span class="brand-mark" aria-hidden="true">a.</span>
+          <span class="brand-copy"><strong>achados</strong><small>garimpos da Shopee</small></span>
+        </a>
+        <label class="search-box">
+          <input id="search" type="search" placeholder="Buscar produtos, categorias e muito mais..." autocomplete="off" aria-label="Buscar produtos" />
+          <span class="search-icon" aria-hidden="true"></span>
+        </label>
+        <a class="header-promo" href="#vitrine"><span class="promo-mark">%</span><span>Ofertas<br /><strong>do dia</strong></span></a>
+      </div>
+      <div class="market-header-bottom">
+        <span class="nav-caption">Explore por categoria</span>
+        <nav class="category-nav" id="categories" aria-label="Categorias de produtos"></nav>
+        <a class="nav-all" href="#vitrine">Ver ofertas <span aria-hidden="true">›</span></a>
+      </div>
+    </header>
+
+    <main class="market-main">
+      <div class="breadcrumb"><a href="#inicio">Início</a><span aria-hidden="true">›</span><span>Achados selecionados</span></div>
+
+      <section class="featured" id="destaque" aria-label="Produto em destaque">
+        <div class="featured-media" id="featured-media">
+          <span class="featured-tag">ACHADO EM DESTAQUE</span>
+          <div class="featured-image-wrap">
+            <img id="featured-image" alt="" />
+            <div class="image-placeholder" id="featured-placeholder" aria-hidden="true">Seu próximo achado<br />está chegando.</div>
+          </div>
+        </div>
+        <div class="featured-info">
+          <div class="feature-topline">
+            <span class="feature-kicker">SELEÇÃO DE HOJE</span>
+            <span class="feature-counter"><span class="feature-dot"></span> GARIMPADO</span>
+          </div>
+          <div class="feature-details" id="featured-details">
+            <p class="loading-line">Buscando um achado...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog" id="vitrine" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <div>
+            <p class="catalog-eyebrow">BONS PREÇOS, BOAS DESCOBERTAS</p>
+            <h1 id="catalog-title">Ofertas para encontrar<span>.</span></h1>
+          </div>
+          <label class="sort-control">
+            <span>Ordenar por</span>
+            <select id="sort" aria-label="Ordenar produtos">
+              <option value="featured">Em destaque</option>
+              <option value="price-asc">Menor preço</option>
+              <option value="price-desc">Maior preço</option>
+              <option value="name">Nome</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <div class="catalog-message" id="catalog-message" role="status"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">a.</span><span class="brand-copy"><strong>achados</strong><small>garimpos da Shopee</small></span></a>
+      <p>Como afiliados, podemos receber comissão por compras feitas pelos links desta página.</p>
+      <a class="footer-admin" href="/admin.html">Painel administrativo</a>
+      <a class="footer-top" href="#inicio">Voltar ao topo ↑</a>
+    </footer>
+  </body>
+</html>
