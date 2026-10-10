@@ -1,6 +1,6 @@
 # Achados Shopee
 
-Vitrine de produtos afiliados da Shopee com catálogo servido pelo backend, painel administrativo autenticado e registro de cliques nos links de afiliado.
+Vitrine de produtos afiliados de e-commerce, incluindo Shopee e Mercado Livre, com catálogo servido pelo backend, painel administrativo autenticado e registro de cliques nos links de afiliado.
 
 > [!IMPORTANT]
 > **`database.json` é apenas um armazenamento temporário para desenvolvimento local. Ele não substitui um banco de dados de produção.** Antes de publicar o site ou aceitar tráfego real, configure um banco persistente, como MongoDB Atlas. O arquivo JSON fica no disco de uma única máquina, não oferece transações nem coordenação entre várias instâncias e pode causar perda ou inconsistência de dados em reinicializações, falhas ou gravações concorrentes. Ele também não deve ser usado como backup.
